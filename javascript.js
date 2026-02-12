@@ -77,12 +77,25 @@ function render(){
         gameOverModadl.style.display="flex";
         return;
     }
+
+    //this is logic if snake collide with itself
+    for(let i=0;i<snake.length;i++){
+    if(head.x==snake[i].x && head.y==snake[i].y){
+    clearInterval(intervalId);
+    modal.style.display="flex";
+    stratGameModal.style.display="none"
+ gameOverModadl.style.display="flex";
+ return;
+}
+    }
+    
+
+
      //ye logic food consume krne ke liye hai
     if(head.x==food.x && head.y==food.y){
         blocks[`${food.x}-${food.y}`].classList.remove("food")
         food={x:Math.floor(Math.random()*rows),y:Math.floor(Math.random()*cols)}
         blocks[`${food.x}-${food.y}`].classList.add("food")
-        
         snake.unshift(head)
        
         
