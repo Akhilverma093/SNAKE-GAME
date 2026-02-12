@@ -134,7 +134,7 @@ function render(){
 
 startButton.addEventListener("click",()=>{
     modal.style.display="none";
-    intervalId=setInterval(()=>{render()},100)
+    intervalId=setInterval(()=>{render()},200)
 
     //this is the code to set a time 
     timerIntervalId=setInterval(()=>{
@@ -169,7 +169,7 @@ function restartGame(){
     direction="down"
     snake=[{x:1,y:3}]
     food={x:Math.floor(Math.random()*rows),y:Math.floor(Math.random()*cols)}
-    intervalId=setInterval(()=>{render()},100)
+    intervalId=setInterval(()=>{render()},200)
 }
 
  addEventListener("keydown",function(event){
