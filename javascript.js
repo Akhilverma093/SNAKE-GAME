@@ -84,18 +84,23 @@ function render(){
     clearInterval(intervalId);
     modal.style.display="flex";
     stratGameModal.style.display="none"
- gameOverModadl.style.display="flex";
- return;
-}
+    gameOverModadl.style.display="flex";
+    return;
     }
+    }
+
     
 
 
      //ye logic food consume krne ke liye hai
+    
     if(head.x==food.x && head.y==food.y){
         blocks[`${food.x}-${food.y}`].classList.remove("food")
         food={x:Math.floor(Math.random()*rows),y:Math.floor(Math.random()*cols)}
         blocks[`${food.x}-${food.y}`].classList.add("food")
+           
+        
+       
         snake.unshift(head)
        
         
@@ -108,6 +113,7 @@ function render(){
             localStorage.setItem("highScore",highScore)
         }
     }
+     
 
 
      snake.forEach(segment=>{
@@ -128,7 +134,7 @@ function render(){
 
 startButton.addEventListener("click",()=>{
     modal.style.display="none";
-    intervalId=setInterval(()=>{render()},200)
+    intervalId=setInterval(()=>{render()},100)
 
     //this is the code to set a time 
     timerIntervalId=setInterval(()=>{
@@ -163,7 +169,7 @@ function restartGame(){
     direction="down"
     snake=[{x:1,y:3}]
     food={x:Math.floor(Math.random()*rows),y:Math.floor(Math.random()*cols)}
-    intervalId=setInterval(()=>{render()},200)
+    intervalId=setInterval(()=>{render()},100)
 }
 
  addEventListener("keydown",function(event){
