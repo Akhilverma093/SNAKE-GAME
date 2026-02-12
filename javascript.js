@@ -83,6 +83,7 @@ function render(){
         food={x:Math.floor(Math.random()*rows),y:Math.floor(Math.random()*cols)}
         blocks[`${food.x}-${food.y}`].classList.add("food")
         snake.unshift(head)
+        
 //this is score calcualting code part-
         score+=5;
         scoreElement.innerText=score;
@@ -96,10 +97,13 @@ function render(){
 
      snake.forEach(segment=>{
         blocks[`${segment.x}-${segment.y}`].classList.remove("fill")
+ 
      })
+    
     snake.unshift(head);
     // unshift se array ke starting mai append ho jayega
     snake.pop();
+   
 
 
      snake.forEach(segment=>{
