@@ -90,7 +90,7 @@ section .infos{
 
 .board{
     border: 1px solid var(--border-board-color);
-    flex-grow: 1;
+    flex-grow: 1;  
     /* isse ye hota hai ki jitna area bacha hai wo ye cover kr lega */
     display: grid;
     grid-template-columns:repeat(auto-fill, minmax(50px,1fr)) ;
@@ -106,9 +106,6 @@ section .infos{
 
 .fill{
 background-color: var(--bg-fill-color);
-}
-.fillhead{
-    background-color: blue;
 }
 
 .food{
